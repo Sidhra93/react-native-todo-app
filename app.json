@@ -25,6 +25,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Followed the React Native Tutorial by The Net Ninja on YouTube and made a few tweaks of my own"
   }
 }

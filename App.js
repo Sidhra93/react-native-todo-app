@@ -9,7 +9,13 @@ export default function App() {
     const [ todos, setTodos ] = useState([
         { text: 'buy coffee', key: '1' },
         { text: 'clean the house', key: '2' },
-        { text: 'do laundry', key: '3' }
+        { text: 'do laundry', key: '3' },
+        { text: 'buy coffee', key: '4' },
+        { text: 'clean the house', key: '5' },
+        { text: 'do laundry', key: '6' },
+        { text: 'buy coffee', key: '7' },
+        { text: 'clean the house', key: '8' },
+        { text: 'do laundry', key: '9' }
     ])
 
     const submitHandler = (text) => {
@@ -34,26 +40,26 @@ export default function App() {
     }
 
     return (
-        // <TouchableWithoutFeedback onPress={ () => {
-        //     Keyboard.dismiss()
-        //     console.log('dismissed keyboard')
-        //  } }>
-        //     <View style={styles.container}>
-        //         <Header />
-        //         <View style={styles.content}>
-        //             <AddTodo submitHandler={ submitHandler } />
-        //             <View style={styles.list}>
-        //                 <FlatList
-        //                     data={ todos }
-        //                     renderItem={ ({item}) => (
-        //                         <TodoItem item={ item } pressHandler={ pressHandler } />
-        //                     ) }
-        //                 />
-        //             </View>
-        //         </View>
-        //     </View>
-        // </TouchableWithoutFeedback>
-        <Sandbox />
+        <TouchableWithoutFeedback onPress={ () => {
+            Keyboard.dismiss()
+            console.log('dismissed keyboard')
+         } }>
+            <View style={styles.container}>
+                <Header />
+                <View style={styles.content}>
+                    <AddTodo submitHandler={ submitHandler } />
+                    <View style={styles.list}>
+                        <FlatList
+                            data={ todos }
+                            renderItem={ ({item}) => (
+                                <TodoItem item={ item } pressHandler={ pressHandler } />
+                            ) }
+                        />
+                    </View>
+                </View>
+            </View>
+        </TouchableWithoutFeedback>
+        // <Sandbox />
     );
 }
 
@@ -63,9 +69,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     content: {
+        flex: 1,
         padding: 40
     },
     list: {
-        marginTop: 20
+        marginTop: 20,
+        flex: 1
     }
 });
