@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 export default function App() {
     const [ todos, setTodos ] = useState([
         { text: 'buy coffee', key: '1' },
-        { text: 'create an app', key: '2' },
+        { text: 'clean the house', key: '2' },
         { text: 'do laundry', key: '3' }
     ])
 
