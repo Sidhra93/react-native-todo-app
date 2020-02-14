@@ -7,22 +7,16 @@ import Sandbox from './components/Sandbox'
 
 export default function App() {
     const [ todos, setTodos ] = useState([
-        { text: 'buy coffee', key: '1' },
-        { text: 'clean the house', key: '2' },
-        { text: 'do laundry', key: '3' },
-        { text: 'buy coffee', key: '4' },
-        { text: 'clean the house', key: '5' },
-        { text: 'do laundry', key: '6' },
-        { text: 'buy coffee', key: '7' },
-        { text: 'clean the house', key: '8' },
-        { text: 'do laundry', key: '9' }
+        { text: 'buy coffee', key: 1 },
+        { text: 'clean the house', key: 2 },
+        { text: 'do laundry', key: 3 }
     ])
 
     const submitHandler = (text) => {
         if(text.length > 3) {
             setTodos((prevTodos) => {
                 return [
-                    { text: text, key: Math.random().toString() },
+                    { text: text, key: prevTodos.length + 1 },
                     ...prevTodos
                 ]
             })
